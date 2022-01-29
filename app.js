@@ -19,11 +19,29 @@ const game = {
     
     do { //do...while loop with parseInt prompt while the guess is not a number or less than 1 or greater than 100
       guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}:`))
-    } while (isNan(guess) || guess < this.smallestNum || guess > this.biggestNum
+    } while (isNaN(guess) || guess < this.smallestNum || guess > this.biggestNum
     )
     
     return guess;
   },
+  
+  
+  setRange: function() {
+    do {this.smallestNum = parseInt(prompt(`Enter a number-this will be the low end of the range.`))
+  } while (isNaN(this.smallestNum))
+
+    do {
+      this.biggestNum = parseInt(prompt(`Enter a number that is ${this.smallestNum +2} or more. This will be the high end of the range.`))
+    } while (isNan(this.biggestNum) || this.biggestNum < this.smallestNum + 2)
+
+  }
+  
+  
+  
+  
+  
+  
+  
   
   //this is Task 5
   render: function() {
@@ -41,9 +59,6 @@ const game = {
 
   }
 
+  game.play();
 
-
-
-
-
-  console.log(game.play())
+  (isNan(this.biggestNum) || this.biggestNum < this.smallestNum + 2)
