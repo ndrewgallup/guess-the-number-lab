@@ -7,7 +7,12 @@ const game = {
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
-  }
+
+      //invoke getGuess and add new guess to prevGuesses array
+      do {
+        this.prevGuesses.push(this.getGuess())
+      } while (this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum);
+  },
 
   getGuess: function(){ //function for user's guess with return messages
     let guess;
@@ -19,8 +24,10 @@ const game = {
     )
     
     return guess;
-  }
-    
+  },
+  
+  //this is Task 5
+
   },
 
 
