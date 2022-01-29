@@ -8,4 +8,20 @@ const game = {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
   }
-}
+
+  getGuess: function(){ //function for user's guess with return messages
+    let guess;
+    
+    do { //do...while loop with parseInt prompt while the guess is not a number or less than 1 or greater than 100
+      guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}:`))
+    } while (
+      isNan(guess) || guess < this.smallestNum || guess > this.biggestNum
+    )
+    
+    return guess;
+  }
+    
+  },
+
+
+console.log(game.play())
