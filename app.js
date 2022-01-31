@@ -26,17 +26,6 @@ const game = {
   },
   
   
-  setRange: function() {
-    do {
-      this.smallestNum = parseInt(prompt(`Enter a number-this will be the low end of the range.`));
-  } while (isNaN(this.smallestNum))
-
-    do {
-      this.biggestNum = parseInt(prompt(`Enter a number that is ${this.smallestNum +2} or more. This will be the high end of the range.`));
-    } while (isNan(this.biggestNum) || this.biggestNum < this.smallestNum + 2)
-
-  },
-  
   
 //this is Task 5
   render: function() {
@@ -49,9 +38,9 @@ const game = {
       message = `Your guess is too ${this.prevGuesses[this.prevGuesses.length -1] > this.secretNum ? "high" : "low"} \nPrevious guesses: ${this.prevGuesses.join(', ')}`;
     }
 
-    return message;
+    alert(message);
   },
 
-  }
+  };
 
-  game.play();
+  game.play()
